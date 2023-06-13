@@ -3,6 +3,7 @@ import NoteItem from "../components/NoteItem";
 import { getAllNotes } from "../api/notes";
 import { useQuery } from "@tanstack/react-query";
 import AddNote from "../components/AddNote";
+import { useMutation } from "@tanstack/react-query";
 
 const Notes = () => {
   const {
@@ -19,6 +20,11 @@ const Notes = () => {
   const onOpen = () => setShow(true);
 
   const noteList = notes?.map((note) => <NoteItem key={note._id} {...note} />);
+
+  // const { mutate: AddNoteFun } = useMutation({
+  //   mutationFn: () => AddNote(notes),
+  // });
+
   return (
     <div className="p-5 min-h-screen bg-gray-900">
       {/* Add note button */}

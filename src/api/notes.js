@@ -20,6 +20,7 @@ const getNote = async (noteId) => {
 
 const createNote = async (noteInfo) => {
   try {
+    console.log(noteInfo, "-----");
     const { data } = await instance.post("/notes", noteInfo);
     return data;
   } catch (error) {
